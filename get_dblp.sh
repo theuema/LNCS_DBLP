@@ -34,10 +34,7 @@ fi
 
 python3 dblp.py
 
-# changed copy process #
-#./copy_bib.sh
-#cat dblp.bib > bibliography.bib
 cat dblp_paper.bib > refs.bib
 cat non_dblp.bib >> refs.bib
 
-#sed -i 's/Lecture Notes in Computer Science/LNCS/' bibliography.bib
+#sed -i 's/Lecture Notes in Computer Science/LNCS/' refs.bib

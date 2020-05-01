@@ -10,6 +10,7 @@
 - [Background](#background)
 - [Quick start](#quick-start)
 - [Tool hints](#tool-hints)
+- [DBLP Automation](#dblp-automation)
 - [Using the template with your git repository](#using-the-template-with-your-git-repository)
 - [FAQ](#faq)
 - [Development](#development-)
@@ -19,6 +20,7 @@
 
 ## Features
 
+* Reference Automation from the dblp computer science bibliography (https://dblp.uni-trier.de/)
 * Support for German documents (without broken headers):
   Contains a fix to increase compatibility with Babel.
   See <https://tex.stackexchange.com/a/441701/9075> for details.
@@ -106,6 +108,15 @@ In case you want to get started using minted, do following steps:
 
 After that you can use and push the `master` branch as usual.
 Notes on syncing with the upstream repository [are available from GitHub](https://help.github.com/articles/syncing-a-fork/).
+
+## DBLP Automation
+1. Add a citation to your `doc.tex` file (or any other .tex file in your document folder) using the defined prefix `DBLP:` with the dblp key. e.g.: \cite{DBLP:tr/meltdown/s18}
+2. Execute `get_dblp.sh`.
+3. Done.
+
+The get script adds the BibTeX record to `dblp_paper.bib` and later copies the entry to `refs.bib` for compilation. References that are not part of the dblp computer science bibliography can be added to `non_dblp.bib` manually, which are also copied to `refs.bib` via the get script. 
+
+Configure a custom LateX build and include the get script to avoid the manual execution everytime references are changed. 
 
 ## FAQ
 
