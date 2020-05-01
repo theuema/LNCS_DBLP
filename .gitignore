@@ -1,5 +1,4 @@
 *.bak
-*.bak?
 
 # downloaded from springer - must not be distributed anywhere else
 llncs2e.zip
@@ -28,24 +27,11 @@ samplepaper.tex
 splncs04.bst
 
 #The output should not be versioned
-paper.pdf
-paper-minted.pdf
-
-#temporary files by gradle
-.gradle
+doc.pdf
+doc-minted.pdf
 
 #temporary file produced by lncs_as branch
 latex.zip
-
-
-
-
-
-
-
-
-
-
 
 # Created by https://www.gitignore.io/api/tex,windows,linux,macos,jabref,microsoftoffice
 
