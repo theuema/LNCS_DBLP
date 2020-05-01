@@ -24,7 +24,7 @@
 * Support for German documents (without broken headers):
   Contains a fix to increase compatibility with Babel.
   See <https://tex.stackexchange.com/a/441701/9075> for details.
-* Provides a skeletal [paper.tex](paper.tex) file.
+* Provides a skeletal [doc.tex](doc.tex) file.
 * Generated PDF allows for copy and paste of text without getting words with ligatures such as "workflow" destroyed.
   This is enabled by `glyphtounicode`, which encodes ligatures (such as fl) using unicode characters.
 * Automatic setting of "Fig." and "Section"/"Sect." according to the LNCS style.
@@ -43,10 +43,8 @@
 
 Examples:
 
-- [paper.pdf](https://latextemplates.github.io/LNCS/paper.pdf) - normal paper.
-- [paper-minted.pdf](https://latextemplates.github.io/LNCS/paper-minted.pdf) - paper showing minted in action.
-- [paper-newtx.pdf](http://latextemplates.github.io/LNCS/paper-newtx.pdf) - paper typeset in Times Roman to save some space.
-- [paper-minted-newtx.pdf](http://latextemplates.github.io/LNCS/paper-minted-newtx.pdf) - paper typeset in Times Roman to save some space.
+- [doc.pdf](https://latextemplates.github.io/LNCS/paper.pdf) - normal paper.
+- [doc-minted.pdf](https://latextemplates.github.io/LNCS/paper-minted.pdf) - paper showing minted in action.
 
 ## Background
 
@@ -71,8 +69,8 @@ Follow the quick start instructions.
     On Linux, just execute `download-llncs-files-from-springer.sh`.
   - In case ftp does not work at your side, you can try online ftp services such as http://www.net2ftp.com/ to download the files.
     Open the connection to `ftp.springernature.com` and navigate to `cs-proceeding`, `llncs`, and download the ZIP archive.
-* Edit [paper.tex](paper.tex).
-* `latexmk paper`.
+* Edit [doc.tex](doc.tex).
+* `latexmk doc`.
 
  As you see on CircleCI, the paper compiles out of the box.
  There is no need to adjust the packages or to remove some of them.
@@ -97,8 +95,8 @@ In case you want to get started using minted, do following steps:
 
 1. Install python: `choco install python` - that uses [chocolatey](https://chocolatey.org/) to install Python
 2. Install [pygments]: `pip instal pygments` - that uses the Pyhton package manager to install the pygments library
-3. When latexing, use `-shell-escape`: `pdflatex -shell-escape paper`.
-   You can also just execute `latexmk paper`.
+3. When latexing, use `-shell-escape`: `pdflatex -shell-escape doc`.
+   You can also just execute `latexmk doc`.
 
 ## Using the template with your git repository
 
@@ -160,7 +158,7 @@ by
 Execute following command:
 
 ```shell
-latexindent -l -s -sl -w paper.tex
+latexindent -l -s -sl -w doc.tex
 ```
 
 ### Q: I want to obey the one-sentence-per-line rule. How can I do that?
@@ -168,7 +166,7 @@ latexindent -l -s -sl -w paper.tex
 Execute following command:
 
 ```shell
-latexindent -m -l -s -sl -w paper.tex
+latexindent -m -l -s -sl -w doc.tex
 ```
 
 Attention! This is work in progress and does not always produce best results.
@@ -176,7 +174,7 @@ Attention! This is work in progress and does not always produce best results.
 ### Q: Is it possible to have a footer indicating that the paper is intended to be submitted/submitted/published?
 
 Activate the `llncsconf` package.
-The possible options are listed in `paper.tex`.
+The possible options are listed in `doc.tex`.
 
 ### Q: Can I also write in German?
 
@@ -188,7 +186,7 @@ Yes.
     \documentclass[english,runningheads,a4paper]{llncs}[2018/03/10]
     ```
 
-1. Please search for `babel` in `paper.tex` and use
+1. Please search for `babel` in `doc.tex` and use
 
     ```latex
     \usepackage[english,ngerman]{babel}
@@ -205,7 +203,7 @@ Yes.
 Reindent:
 
 ```shell
-latexindent -y="indentPreamble:1,defaultIndent:'  '" -m -w paper.tex`
+latexindent -y="indentPreamble:1,defaultIndent:'  '" -m -w doc.tex`
 ```
 
 If you like this work, please consider donating via [Liberapay](https://liberapay.com/koppor)!
